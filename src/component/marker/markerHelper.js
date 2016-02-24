@@ -26,6 +26,7 @@ define(function (require) {
         var value = numCalculate(data, valueDataDim, mlType);
 
         var dataIndex = data.indexOfNearest(valueDataDim, value, true);
+        if (dataIndex==-1) return [];
         coordArr[baseCoordIndex] = data.get(baseDataDim, dataIndex, true);
         coordArr[valueCoordIndex] = data.get(valueDataDim, dataIndex, true);
 
